@@ -1,0 +1,5 @@
+question,expected_keywords
+"What are the agent types listed in the challenge?","Knowledge Base Agent|Review Remediation Agent|Account Opening Agent|Conversational Agent|DevOps Agent"
+"What must be included in the submission?","working demo link|code repository|documentation|workflows"
+"What is the role of embeddings?","similarity search|embeddings|vector"
+"What should architecture include?","input|preprocessing|embeddings|vector store|retrieval|LLM|output"

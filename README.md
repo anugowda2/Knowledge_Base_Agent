@@ -47,13 +47,20 @@ GitHub repo: https://github.com/anugowda2/Knowledge_Base_Agent
 
 Knowledge_Base_Agent/
 ├── app.py
+
 ├── ingest.py
+
 ├── evaluate.py
+
 ├── requirements.txt
+
 ├── README.md
+
 ├── store.pkl # generated after running ingest.py
+
 └── docs/
-└── AI_Agent_Development_Challenge___for_merge.pdf
+
+    └── AI_Agent_Development_Challenge___for_merge.pdf
 ---
 
 ## Setup & run instructions (local)
@@ -73,11 +80,7 @@ cmd
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 
-Build vector store
-
 python ingest.py
-
-This creates store.pkl. (First run downloads the HF model.)
 
 Run the app
 
@@ -93,16 +96,8 @@ git add .
 git commit -m "Prepare for Streamlit deploy"
 git push origin main
 
-
 Go to https://share.streamlit.io
  and sign in with GitHub.
 
 Note: this repo is already deployed at:
 https://knowledgebaseagent-v3bfwk6ygbpbkbxxvpx4z2.streamlit.app/
-
-Potential improvements (suggested for future work)
-
-OCR ingestion: integrate pdf2image + pytesseract to support scanned PDFs.
-Vector DB / FAISS: use FAISS, Chroma or Pinecone for larger datasets and faster scale.
-Highlighting: visually highlight matched tokens inside the snippets for clarity.
-Conversational mode: preserve context across turns for multi-turn Q&A.

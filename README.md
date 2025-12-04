@@ -46,6 +46,7 @@ GitHub repo: https://github.com/anugowda2/Knowledge_Base_Agent
 ## Project structure
 
 Knowledge_Base_Agent/
+
 ├── app.py
 
 ├── ingest.py
@@ -60,7 +61,7 @@ Knowledge_Base_Agent/
 
 └── docs/
 
-    └── AI_Agent_Development_Challenge___for_merge.pdf
+  └── AI_Agent_Development_Challenge___for_merge.pdf
 ---
 
 ## Setup & run instructions (local)

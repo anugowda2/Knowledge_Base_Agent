@@ -9,8 +9,6 @@ GitHub repo: https://github.com/anugowda2/Knowledge_Base_Agent
 
 **Knowledge_Base_Agent** is a PDF-based Knowledge Retrieval Agent that ingests one or more PDF documents, converts them into overlapping text chunks, builds local semantic embeddings (HuggingFace sentence-transformers), and serves a Streamlit UI for evidence-based question answering.
 
-The agent returns **extractive, document-grounded answers** (it shows the exact chunks used to answer). This version is **fully offline / free** — it does not require the OpenAI API.
-
 ---
 
 ## Features & limitations
@@ -42,7 +40,6 @@ The agent returns **extractive, document-grounded answers** (it shows the exact 
 - Vector search: **scikit-learn** `NearestNeighbors`
 - Data: **numpy**, **pandas**
 - Evaluation: **rapidfuzz**
-- (Optional) OpenAI **only** if you later choose to enable LLM synthesis — not required.
 
 ---
 
@@ -54,7 +51,7 @@ Knowledge_Base_Agent/
 ├── evaluate.py
 ├── requirements.txt
 ├── README.md
-├── store.pkl # generated after running ingest.py (commit for faster deploy)
+├── store.pkl # generated after running ingest.py
 └── docs/
 └── AI_Agent_Development_Challenge___for_merge.pdf
 ---
@@ -90,7 +87,7 @@ Open http://localhost:8501 and ask questions.
 
 Deploy to Streamlit Community Cloud (steps you can follow)
 
-Commit your project to GitHub (include store.pkl to avoid downloading model on the cloud and speed deployments):
+Commit your project to GitHub:
 
 git add .
 git commit -m "Prepare for Streamlit deploy"
@@ -100,26 +97,12 @@ git push origin main
 Go to https://share.streamlit.io
  and sign in with GitHub.
 
-Click New app → choose the repo anugowda2/Knowledge_Base_Agent, branch main, and set the main file to app.py. Click Deploy.
-
-Streamlit will build the environment and start your app at a public URL. If you included store.pkl, startup will be fast. If not, the platform will download the HF model during build (slower).
-
 Note: this repo is already deployed at:
 https://knowledgebaseagent-v3bfwk6ygbpbkbxxvpx4z2.streamlit.app/
 
 Potential improvements (suggested for future work)
 
 OCR ingestion: integrate pdf2image + pytesseract to support scanned PDFs.
-
 Vector DB / FAISS: use FAISS, Chroma or Pinecone for larger datasets and faster scale.
-
 Highlighting: visually highlight matched tokens inside the snippets for clarity.
-
 Conversational mode: preserve context across turns for multi-turn Q&A.
-
-Local LLM: integrate an open-source LLM (7B–13B) for optional on-device synthesis if you have GPU.
-
-CI / Tests: add unit tests for chunking, retrieval, and evaluation scripts.
-
-Dockerize: containerize the app for reproducible deployment.
-

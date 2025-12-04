@@ -14,8 +14,8 @@ GitHub repo: https://github.com/anugowda2/Knowledge_Base_Agent
 ## Features & limitations
 
 **Features**
-- Local embeddings using `sentence-transformers` (`all-MiniLM-L6-v2` by default).
-- Fast similarity search via scikit-learn `NearestNeighbors` (cosine similarity).
+- Local embeddings using `sentence-transformers`.
+- Fast similarity search via scikit-learn `NearestNeighbors`.
 - Streamlit web UI showing:
   - Top-k retrieved chunks with scores
   - Concise extractive answers (from retrieved text)
@@ -27,7 +27,6 @@ GitHub repo: https://github.com/anugowda2/Knowledge_Base_Agent
 - No OCR included: scanned-image PDFs will not yield readable text unless OCR is run first.
 - No generative LLM synthesis in this version — answers are extractive only.
 - Very large document collections may need FAISS or a vector DB for scalability.
-- Very long sentences may be split across chunks; tune `CHUNK_SIZE` / `OVERLAP` if required.
 
 ---
 
@@ -61,7 +60,8 @@ Knowledge_Base_Agent/
 
 └── docs/
 
-  └── AI_Agent_Development_Challenge___for_merge.pdf
+└── AI_Agent_Development_Challenge___for_merge.pdf
+
 ---
 
 ## Setup & run instructions (local)
